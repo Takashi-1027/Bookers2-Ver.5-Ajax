@@ -12,6 +12,8 @@
     <%= render 'layouts/header' %>
       <main>
         <p id="notice"><%= notice %></p>
+        <!--[5. ヘッダー以外のレイアウトが表示されない] yieldが表記されていないと画面に表示されない-->
+        <%=yield %>
       </main>
     <%= render 'layouts/footer' %>
   </body>
