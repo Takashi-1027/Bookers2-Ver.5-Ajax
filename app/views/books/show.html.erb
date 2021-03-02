@@ -4,9 +4,9 @@
       <h2>User info</h2>
       <!--[20. NameError undefined local variable or method 'user']の修正を以下のように修正した-->
       <!--修正箇所< %= render 'users/info' (,users: @book.user)<==これを追加した。！ %>-->
-      <%= render 'users/info', user: @book.user %>
+      <%= render 'users/info', user: @book.user %>　<!--users/infoはusersファイルの中の_info.html.erb(部分テンプレートを呼び出す)を-->
       <h2 class="mt-3">New book</h2>
-      <%= render 'form', book: @book %>
+      <%= render 'form', book: @empty_book %> <!-- formはbooksファイルの中の_form.html.erb(部分テンプレートを呼び出す)-->
     </div>
     <div class='col-md-8 offset-md-1'>
   		<h2>Book detail</h2>
