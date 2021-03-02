@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  # [10. ログイン後にtopページが表示されてしまう] root_pathをuser_pathへ修正した。
+  # current_userは現在ログインしているユーザーの情報を簡単にとってくることができるメソッド。
+
   def after_sign_in_path_for(resource)
     user_path(current_user)
   end
