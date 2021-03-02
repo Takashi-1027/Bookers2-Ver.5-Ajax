@@ -21,9 +21,11 @@ class UsersController < ApplicationController
       # redirect_to user_path(@user.id), notice: "You have updated user successfully."
       # redirect_to users_path(@user), notice: "You have updated user successfully."
       redirect_to @user, notice: "You have updated user successfully."
+      # [15. プロフィール編集が成功した後] URLを見てみるとhttps://...amazonaws.com/users.1 となっていますが、/users.1となることは不適切
+      # だから users_path(@user)を@userに修正した。
     else
-      # render "show"
-      render "edit"
+      render "show"
+      # render "edit"
     end
   end
 
