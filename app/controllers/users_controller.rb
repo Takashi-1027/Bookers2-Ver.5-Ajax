@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :ensure_correct_user, only: [:update, :edit]
+  before_action :ensure_correct_user, only: [:update, :edit] # :editを記述することによって、[26. 他ユーザーのプロフィールを編集できないようにする]ことができる
 
   def show
     @user = User.find(params[:id])
