@@ -45,6 +45,9 @@ class BooksController < ApplicationController
   private
 
   def book_params
+    # [18. 本の投稿ができない: エラーメッセージが表示されない]を以下の通りに修正した
+    # params.require(:book).permit(:title)
+    # params.require(:book).permit(:title, :body) <== :bodyを追加した
     params.require(:book).permit(:title, :body)
   end
 
