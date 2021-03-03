@@ -19,8 +19,12 @@
           </td>
           <td><%= link_to @book.title, book_path(@book) %></td>
           <td><%= @book.body %></td>
-          <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success edit_book_#{@book.id}" %></td>
-          <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%></td>
+
+          <!--< %= if @book.user == current_user %>  <!-- <==このif文を記述することにより[27. 他ユーザーが投稿した本の編集、削除のリンクを表示させない]ことができる-->
+                                                <!-- 上記のif文は「もし、本の投稿をしたユーザーと現在ログインしているユーザーが一致していたら」という意味になる-->
+            <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success edit_book_#{@book.id}" %></td>
+            <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%></td>
+          <!--< % end %>-->
         </tr>
       </table>
     </div>
