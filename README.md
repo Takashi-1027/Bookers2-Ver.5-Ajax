@@ -28,3 +28,7 @@ Things you may want to cover:
 
 上記の修正はバリデーションが作動し、エラー文が表示されているので、何もしていない。
 
+2021/03/03
+新規ユーザー登録時に・introduction can't be blankというエラーが発生した。
+解決策はmodels/user.rbのvalidates :introduction, presence: trueが影響していたみたいで
+これを削除したら解決した。

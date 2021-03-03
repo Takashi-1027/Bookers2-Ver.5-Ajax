@@ -59,10 +59,10 @@ class BooksController < ApplicationController
 
   # [29. ログイン中にURLを入力すると他人が投稿した本の編集ページに遷移できないようにする]
   # 他人が投稿した本の編集ページに遷移できないようにするには 本の投稿者とログインユーザを比較する処理
-  def ensure_correct_user
+  def ensure_correct_book
     @book = Book.find(params[:id])
     unless @book.user == current_user
-     redirect_to boo
+     redirect_to books_path
     end
   end
 
