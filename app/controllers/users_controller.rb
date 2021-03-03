@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :ensure_correct_user, only: [:update, :edit] # :editを記述することによって、[26. 他ユーザーのプロフィールを編集できないようにする]ことができる
+  # before_action :ensure_correct_user, only: [:update, :edit] # :editを記述することによって、[26. 他ユーザーのプロフィールを編集できないようにする]ことができる
+  before_action :ensure_correct_user, only: [:edit, :update]
+  before_action :authenticate_user! # 答え エラーが出たら消す
 
   def show
     @user = User.find(params[:id])
@@ -37,7 +39,8 @@ class UsersController < ApplicationController
   def ensure_correct_user
     @user = User.find(params[:id])
     unless @user == current_user
-      redirect_to user_path(current_user)
+      redirect_to books_path　# 答え
+      # redirect_to user_path(current_user)
     end
   end
 end

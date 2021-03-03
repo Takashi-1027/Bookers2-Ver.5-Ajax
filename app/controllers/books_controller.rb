@@ -2,11 +2,12 @@ class BooksController < ApplicationController
   # [29. ログイン中にURLを入力すると他人が投稿した本の編集ページに遷移できないようにする]
   # 他人が投稿した本の編集ページに遷移できないようにするには 本の投稿者とログインユーザを比較する処理
   # 他人が編集(:edit)して、投稿(:update)できないようにする。
-  before_action :ensure_correct_book, only: [:update, :edit]
+  before_action :ensure_correct_book, only: [:update, :edit, :destroy]
+  before_action :authenticate_user! # 答え　エラーが出たら消す
 
   def show
     @book = Book.find(params[:id])
-    @empty_book = Book.new # <==[22. 本の詳細ページで新規投稿フォームが編集フォームになっている] 何も情報が入っていない空のモデルを渡すために追加した。Book.newを記述すると空のモデルが生成され、インスタンス変数@empty_bookに代入されてViewで利用できるようになります。
+    @book_new = Book.new # <==[22. 本の詳細ページで新規投稿フォームが編集フォームになっている] 何も情報が入っていない空のモデルを渡すために追加した。Book.newを記述すると空のモデルが生成され、インスタンス変数@empty_bookに代入されてViewで利用できるようになります。
   end
 
   def index
