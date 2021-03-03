@@ -1,3 +1,10 @@
+課題3【Bookers2へ「いいね/コメント機能」を実装】に取り組む
+
+Bookers2-Ver.2のファイルに入っている
+
+
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the
