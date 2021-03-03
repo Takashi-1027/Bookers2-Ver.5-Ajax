@@ -2,9 +2,6 @@
 
 Bookers2-Ver.2のファイルに入っている
 
-
-
-
 # README
 
 This README would normally document whatever steps are necessary to get the
