@@ -1,4 +1,8 @@
 class BooksController < ApplicationController
+  # [29. ログイン中にURLを入力すると他人が投稿した本の編集ページに遷移できないようにする]
+  # 他人が投稿した本の編集ページに遷移できないようにするには 本の投稿者とログインユーザを比較する処理
+  # 他人が編集(:edit)して、投稿(:update)できないようにする。
+  before_action :ensure_correct_book, only: [:update, :edit]
 
   def show
     @book = Book.find(params[:id])
@@ -51,5 +55,16 @@ class BooksController < ApplicationController
     # params.require(:book).permit(:title, :body) <== :bodyを追加した
     params.require(:book).permit(:title, :body)
   end
+
+
+  # [29. ログイン中にURLを入力すると他人が投稿した本の編集ページに遷移できないようにする]
+  # 他人が投稿した本の編集ページに遷移できないようにするには 本の投稿者とログインユーザを比較する処理
+  def ensure_correct_user
+    @book = Book.find(params[:id])
+    unless @book.user == current_user
+     redirect_to example_path
+    end
+  end
+
 
 end
