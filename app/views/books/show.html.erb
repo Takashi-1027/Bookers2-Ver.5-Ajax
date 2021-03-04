@@ -21,6 +21,7 @@
           <td><%= @book.body %></td>
 
           <td><%= render 'books/favorites', book: @book %></td>
+          <td>コメント数：<%= @book.book_comments.count %></td>
 
           <% if @book.user_id == current_user.id %> <!-- <==このif文を記述することにより[27. 他ユーザーが投稿した本の編集、削除のリンクを表示させない]ことができる-->
           <!-- 上記のif文は「もし、本の投稿をしたユーザーと現在ログインしているユーザーが一致していたら」という意味になる-->
@@ -31,7 +32,6 @@
       </table>
 
       <div class="comments my-5">
-        <p>コメント数：<%= @book.book_comments.count %></p>
         <% @book.book_comments.each do |book_comment| %>
           <div class="comment mt-2">
             <%= attachment_image_tag(book_comment.user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
