@@ -8,6 +8,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @book_new = Book.new # <==[22. 本の詳細ページで新規投稿フォームが編集フォームになっている] 何も情報が入っていない空のモデルを渡すために追加した。Book.newを記述すると空のモデルが生成され、インスタンス変数@empty_bookに代入されてViewで利用できるようになります。
+    @book_comment = BookComment.
   end
 
   def index
