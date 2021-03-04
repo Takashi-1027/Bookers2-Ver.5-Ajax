@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'book_comments/create'
+  get 'book_comments/destroy'
   devise_for :users
   get 'home/about' => 'homes#about'
   root to: 'homes#top'
