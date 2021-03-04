@@ -13,6 +13,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @book = Book.new
+    @switch_on_favorite = true
   end
 
   def create
