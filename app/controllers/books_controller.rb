@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   # 他人が投稿した本の編集ページに遷移できないようにするには 本の投稿者とログインユーザを比較する処理
   # 他人が編集(:edit)して、投稿(:update)できないようにする。
   before_action :ensure_correct_book, only: [:update, :edit, :destroy]
-  before_action :authenticate_user! # 答え　エラーが出たら消す
+  before_action :authenticate_user! # 答え-エラーが出たら消す ログインしているユーザーしか投稿関連を行えないようにする
 
   def show
     @book = Book.find(params[:id])

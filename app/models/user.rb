@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   # belongs_to :books
 
-  # has_many :favorites, dependent: :destroy
-  has_many :favorites,through: :favorites
+  has_many :favorites, dependent: :destroy
+  # has_many :favorites,through: :favorites
 
   attachment :profile_image, destroy: false
 
