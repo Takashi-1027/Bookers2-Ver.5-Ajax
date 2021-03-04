@@ -1,7 +1,8 @@
 class Book < ApplicationRecord
 	# has_many :user
 	belongs_to :user
-
+	
+	has_many :book_comments, dependent: :destroy
 	has_many :favorites, dependent: :destroy
 
 	def favorited_by?(current_user)
