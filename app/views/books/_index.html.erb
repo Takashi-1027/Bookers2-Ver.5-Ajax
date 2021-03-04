@@ -20,8 +20,9 @@
         <% if @switch_on_favorite %>
           <td><%= render 'books/favorites', book: book %></td>
         <% end %>
-        
-        
+
+        <td><p>コメント数:<%= book.book_comments.count %></p></td>
+
       </tr>
     <% end %>
   </tbody>
