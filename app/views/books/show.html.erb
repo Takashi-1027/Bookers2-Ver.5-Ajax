@@ -31,7 +31,7 @@
       </table>
 
       <div class="comments">
-        <p>コメント件数：<%= @book.book_comments.count %></p>
+        <p>コメント数：<%= @book.book_comments.count %></p>
         <% @book.book_comments.each do |book_comment| %>
 
           <%= book_comment.user.name %>
