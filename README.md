@@ -1,6 +1,6 @@
 課題4【Bookers2へ「フォロー/フォロワー機能」を実装】に取り組む
 
-Bookers2-Ver.3のファイルに入っている
+Bookers2-Ver.3のファイルに入っている。
 
 # README
 

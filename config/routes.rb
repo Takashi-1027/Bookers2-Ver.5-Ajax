@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     # View-bookの中にfavoritesを作るからresouces :booksの中に入れている。
   end
   resources :users, only: [:show,:index,:edit,:update]
+   resource :relationships, only: [:create, :destroy]
+  # get 'follow', 'followers'
 end
   # get 'book_comments/create'
   # get 'book_comments/destroy'
