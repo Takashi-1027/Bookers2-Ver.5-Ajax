@@ -15,19 +15,13 @@
 
         <tbody>
           <% users= @user.followed %>
-            <% users.each do |user| %>
-              <tr>
-                <td>
-                  <%= attachment_image_tag(user.follower, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg" )%>
-                </td>
-                <td>
-                  <%= user.follower.name %>
-                </td>
-                <td>
-                  <%= link_to 'Show' , user_path(user.follower), class: "user_#{user.follower.id}" %>
-                </td>
-              </tr>
-              <% end %>
+          <% users.each do |user| %>
+            <tr>
+              <td><%= attachment_image_tag(user.follower, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg" )%></td>
+              <td><%= user.follower.name %></td>
+              <td><%= link_to 'Show' , user_path(user.follower), class: "user_#{user.follower.id}" %></td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
