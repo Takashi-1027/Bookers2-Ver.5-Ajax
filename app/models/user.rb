@@ -22,14 +22,14 @@ class User < ApplicationRecord
   end
   
   # ユーザーのフォローを外す
-  def unfollow(user_id)
-    follower.find_by(followed_id: user_id).destroy
-  end
+  # def unfollow(user_id)
+  #   follower.find_by(followed_id: user_id).destroy
+  # end
   
   # フォロー確認をおこなう
-  def following?(user)
-    follower_user.include?(user)
-  end
+  # def following?(user)
+  #   follower_user.include?(user)
+  # end
 
   validates :name, length: {maximum: 20, minimum: 2}, uniqueness: true
   validates :introduction, length: {maximum: 50}
