@@ -9,9 +9,10 @@ Rails.application.routes.draw do
     resources :book_comments, only: [:create, :destroy]
     # View-bookの中にfavoritesを作るからresouces :booksの中に入れている。
   end
-  resources :users, only: [:show,:index,:edit,:update]
+  resources :users, only: [:show,:index,:edit,:update] do
    resource :relationships, only: [:create, :destroy]
-  # get 'follow', 'followers'
+  get 'follows', 'followers' #followsとfollowersのルーティングを追加した
+  end
 end
   # get 'book_comments/create'
   # get 'book_comments/destroy'
