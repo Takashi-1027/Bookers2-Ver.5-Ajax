@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'follows', 'followers' #followsとfollowersのルーティングを追加した
   end
 
-  resources :books,only: [:index, :show, :edit, :create, :destroy, :update] do
+  resources :books, only: [:index, :show, :edit, :create, :destroy, :update] do
     resource :favorites, only: [:create, :destroy]
     resources :book_comments, only: [:create, :destroy]
     # View-bookの中にfavoritesを作るからresouces :booksの中に入れている。

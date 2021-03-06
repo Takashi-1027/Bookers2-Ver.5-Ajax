@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   # 他人が編集(:edit)して、投稿(:update)できないようにする。
   before_action :authenticate_user! # 答え-エラーが出たら消す ログインしているユーザーしか投稿関連を行えないようにする
   before_action :ensure_correct_book, only: [:update, :edit, :destroy]
-  
+
 
   def show
     @book = Book.find(params[:id])

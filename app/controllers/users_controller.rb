@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @books = @user.books
+    @books = @user.books # @user.booksの投稿したユーザーのすべてのbookを表示する。
     @book = Book.new
     @switch_on_favorite = false
   end
