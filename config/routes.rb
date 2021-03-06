@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'search' => 'search#search'
   devise_for :users
 
   root :to => "homes#top"
@@ -16,6 +15,8 @@ Rails.application.routes.draw do
     resources :book_comments, only: [:create, :destroy]
     # View-bookの中にfavoritesを作るからresouces :booksの中に入れている。
   end
+
+  get 'search' => 'searches#search'
 
 end
   # get 'book_comments/create'
