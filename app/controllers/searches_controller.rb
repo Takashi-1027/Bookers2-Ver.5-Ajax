@@ -3,6 +3,7 @@ class SearchesController < ApplicationController
     @range = params[:range]
     search = params[:search]
     @word  = params[:word]
+
     if @range == '1'
       if search == "perfect_much"
         @user = User.where("name like?", "#{@word}")
