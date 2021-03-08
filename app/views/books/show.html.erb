@@ -20,7 +20,8 @@
           <td><%= link_to @book.title, book_path(@book) %></td>
           <td><%= @book.body %></td>
 
-          <td><%= render 'books/favorites', book: @book %></td>
+          <td class="favorite-btn-<%= @book.id %>"><%= render 'favorites/favorite-bth' book: @book %></td>
+
           <td>コメント数：<%= @book.book_comments.count %></td>
 
           <% if @book.user_id == current_user.id %> <!-- <==このif文を記述することにより[27. 他ユーザーが投稿した本の編集、削除のリンクを表示させない]ことができる-->
