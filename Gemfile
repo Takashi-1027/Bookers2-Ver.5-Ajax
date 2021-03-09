@@ -70,6 +70,3 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 
 gem 'kaminari','~> 1.2.1'
-
-# [応用課題6の時にgem 'jquery-rails'（非同期通信化のため）を追加した]
-gem 'jquery-rails'

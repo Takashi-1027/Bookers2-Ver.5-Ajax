@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get 'search' => 'searches#search'
 
+  get '*anything' => 'homes#top'
+
 end
   # get 'book_comments/create'
   # get 'book_comments/destroy'
