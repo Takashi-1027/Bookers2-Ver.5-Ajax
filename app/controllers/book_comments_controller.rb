@@ -31,8 +31,8 @@ end
   end
 
   def ensure_correct_book_comment
-    book = Book.find(params[:book_id])
-    unless book.user == current_user
+    comment = BookComment.find(params[:id])
+    unless comment.user == current_user
       redirect_to books_path
     end
   end
