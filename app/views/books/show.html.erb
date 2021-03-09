@@ -23,9 +23,18 @@
       <div class="new-comment">
         <%= render 'layouts/flash', flash: flash %>
 
-      <!--コメントフォームのためのレンダー-->
+        <!--コメントフォームのためのレンダー------------------------------------------------------------------------>
         <div id="comments_section">
           <%= render 'book_comments/book_comments_section', {book: @book, book_comment: @book_comment} %>
+        </div>
+
+        <!--エラーメッセージ用のレンダー------------------------------------------------------------------------>
+        <div class="new-comment">
+        <%= render 'layouts/flash', flash: flash %>
+
+        <!--コメントフォームのレンダー------------------------------------------------------------------------>
+        <div id="comments_section">
+        <%= render 'book_comments/book_comments_section', {book: @book, book_comment: @book_comment} %>
         </div>
       </div>
     </div>
