@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   get 'search' => 'searches#search'
+  resources :events
 
   get '*anything' => 'homes#top'
 
