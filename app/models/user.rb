@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy # フォローしている人取得(Userのfollowerから見た関係)
   has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy # フォローされている人取得(Userのfollowedから見た関係)
-  has_many :following_user, through: :follower, source: :followed # 自分がフォローしている人
+  has_many :following_user, through: :follower, source: :followed # 自分がフォローされている人
   has_many :follower_user, through: :followed, source: :follower # 自分をフォローしている人
 
   def self.search(search, word)
