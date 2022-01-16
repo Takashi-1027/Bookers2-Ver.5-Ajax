@@ -4,6 +4,8 @@
 
 Bookers2-Ver.5-Ajaxのファイルに入っている。
 
+2022/01/16　閲覧した。
+
 # README
 
 This README would normally document whatever steps are necessary to get the
